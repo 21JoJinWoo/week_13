@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>one minute before the world changed</title>
+<link rel="stylesheet" href="https://use.typekit.net/ezg7kpi.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+<style type="text/css">
+    html, body {cursor: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'>\
+<circle cx='10' cy='10' r='10' fill='red' fill-opacity='0.7'/></svg>\
+") 10 10, auto;
+}
+    html {font-family: "Share Tech", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          word-break: keep-all;}
+    body, header, footer, h1, h2, h3, h4, h5, p {margin: 0; padding: 0}
+    h2 {font-size: 38px;
+        line-height: 1.2;
+        padding-top: 20px;
+        padding-bottom: 10px}
+    h3 {font-size: 20px;
+        line-height: 1.4;
+        padding-bottom: 20px}
+    body {background-color: black;}
+    nav {position: fixed;
+         color: white;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: 1000;
+         font-size: 16px;}
+    nav #timer {
+        font-size: 16px;
+    }
+    .bottom-nav {position: fixed;
+                bottom: 0;
+                width: 100%;
+                z-index: 1000;
+                text-align: center;
+                color: white;
+                font-size: 16px;}
+    header {background-image: url("header.png");
+            background-attachment: fixed;
+            background-size: cover;}
+    .wrap {width: 800px; margin: auto;}
+    .flex{display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding-top: 3px}
+    .flex div:first-child {
+        font-size: 18px;
+        position: relative;
+        width: 100px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+    }
+    .flex div:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .flex div:last-child {
+        width: 100px;
+        text-align: right;
+    }
+    .sound_track {position: absolute;
+                  top: 70px;
+                  right: 0px; 
+                  cursor: pointer;
+                  transition: opacity 0.3s ease-in-out;}
+    .sound_track:hover {opacity: 0.7;}
+    .distopia {position: absolute;
+                  top: 500px;
+                  left: 0px;}
+    .boom {position: absolute;
+           top: 530px;
+           right: 80px;
+           animation: fadeBoom 2s ease-in-out infinite; cursor: pointer;}
+    .gif-overlay {display: none;               
+                  position: fixed;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 2000;               
+                  background: rgba(0,0,0,0.5); 
+                  padding: 10px;               
+                  border-radius: 10px;}
+    .gif-overlay img {width: 1400px;
+                      height: auto;
+                      display: block;}
+    .intro {position: relative;}
+    .intro h1 {font-family: "acier-bat-gris", sans-serif;
+               font-weight: 400;
+               font-style: normal;
+               word-break: keep-all;
+               font-size: 177px;
+               color: white;
+               padding-left: 20px}
+    .intro h2 {font-size: 60px;
+               color: white;
+               padding-top: 50px}
+    .intro h3 {font-size: 30px;
+               color: #d6dcff;
+               padding-top: 20px;
+               line-height: 1.4;}
+    .intro h4 {font-size: 24px;
+               color: white;
+               padding-top: 500px;
+               padding-bottom: 400px;
+               text-shadow: 0px 0px 40px white;}
+    .intro p {font-size: 24px;
+              color: white;
+              line-height: 1.4;
+              padding-top: 40px;
+              padding-bottom: 28px}
+    .span_color_1 {color: #ffb200;}
+    .span_color_2 {color: #0041ff;}
+    .street {background-image: url("street.svg"); 
+            background-size: cover;
+            margin-top: 200px; 
+            margin-left: 20px; 
+            margin-right: 20px; 
+            background-attachment: fixed; 
+            position: relative;
+            overflow: hidden;}
+    .street h2,
+    .street h3,
+    .street h4,
+    .street p {position: relative; 
+               z-index: 1;}
+    .street .quote-pair h2,
+    .street .quote-pair h3 {opacity: 0;
+                            transform: translateY(10px);
+                            transition: opacity 0.3s ease, transform 0.3s ease;}
+    .street .quote-pair:hover h2,
+    .street .quote-pair:hover h3 {opacity: 1;
+                                  transform: translateY(0);}
+    .floating-img-1 {position: absolute;
+                  top: 3%;
+                  left: 10%;
+                  transform: translate(-50%, -50%);
+                  animation: floatY 3s ease-in-out infinite;
+                  z-index: 0;
+                  opacity: 0.6}
+    .floating-img-2 {position: absolute;
+                  top: 18%;
+                  left: 70%;
+                  transform: translate(-50%, -50%);
+                  animation: floatY 4s ease-in-out infinite;
+                  z-index: 0;
+                  opacity: 0.7}
+    .clock-hand {display: block;               
+                 position: absolute;           
+                 top: 30%;
+                 left: 6%;
+                 transform: translate(-50%, -50%);
+                 animation: tick-tock 1s steps(1) infinite;
+                 opacity: 0.7}
+    .peace_gif {position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 40%;
+                pointer-events: none;
+                z-index: 0; 
+                opacity: 0.8}
+    .scene_1 {color: white; 
+              padding-top: 100px; 
+              padding-bottom: 100px; 
+              background-image: url("library.png");
+              background-size: cover;
+              background-attachment: fixed;
+              position: relative;}
+    .scene_1 h1 {font-size: 70px;
+                 padding: 300px 0px;}
+    .scene_1 h2 {font-size: 30px;
+                 line-height: 1.2; padding-right: 50px; display: none;}
+    .scene_1 h3 {font-size: 20px;
+                 line-height: 1.4; display: none}
+     #text-modal {display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.85);
+                color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                z-index: 3000;
+                max-width: 80%;
+                text-align: left;}
+    #text-modal h2,
+    #text-modal h3 {margin: 10px 0;}
+    .scene-img1 {position: absolute;
+                width: 350px;
+                height: auto;
+                top: 100px;
+                left: 150px;
+                mix-blend-mode: difference; 
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;}
+    .scene-img1:hover {transform: scale(1.05);}
+    .scene-img1 img {width: 100%;
+                    height: auto;}
+    .scene-img2 {position: absolute;
+                width: 350px;
+                height: auto;
+                top: 550px;
+                left: 350px;
+                mix-blend-mode: difference;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;}
+    .scene-img2:hover {transform: scale(1.05);}
+    .scene-img2 img {width: 100%;
+                    height: auto;}
+    .scene-img3 {position: absolute;
+                width: 350px;
+                height: auto;
+                top: 150px;
+                right: 60px;
+                transform: translateX(-50%); 
+                animation: shake 0.5s infinite ease-in-out; 
+                mix-blend-mode: difference; cursor: pointer;}
+    .scene-img3:hover {transform: scale(1.05);}
+    .scene-img3 img {width: 100%;
+                    height: auto;}
+    .click-text {position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 24px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+                padding: 4px 10px;
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 4px;
+                backdrop-filter: blur(2px);}
+    .scene-img1:hover .click-text,
+    .scene-img2:hover .click-text,
+    .scene-img3:hover .click-text {opacity: 1;}
+    .scene_2 {display: grid; 
+              grid-template-columns: 710px 1fr 1fr;
+              grid-template-rows: 200px 200px 200px 200px 200px;
+              gap: 20px;
+              background: white;
+              margin: 20px;
+              position: relative;}
+    #a {grid-column: 1 / 2;
+        grid-row: 1 / 6;
+        font-size: 60px;
+        position: relative;    
+        overflow: hidden;     
+        background-color: red;}
+    #hover-img {display: none;
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                object-fit: cover;
+                z-index: 0;}
+    .a-text {position: relative;
+             z-index: 1;
+             color: white;
+             font-size: 60px;}
+    .hover-trigger {transition: background-color 1s ease;}
+    .hover-trigger:hover {background-color: red; color: white;}
+    .scene_3 {background-image: url(concrete.png);
+              padding: 120px 0px;
+              position: relative;}
+    .scene_3 h1{font-size: 100px;
+                color: red;
+                padding: 0px 100px;
+                padding-bottom: 30px;
+                line-height: 1}
+    .scene_3 p{font-size: 20px;
+               padding: 0px 100px;
+               line-height: 1.3;
+               color: white;}
+    .scene_3_img {display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: relative;
+                  background-image: url("restaurant.png");
+                  background-size: cover;
+                  background-attachment: fixed;
+                  padding: 350px 0;}
+    #hoverable-img {position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    max-width: 30%;
+                    height: auto;
+                    transform: translate(-50%, -50%);
+                    transform-origin: center center;
+                    transition: transform 0.4s ease-out;
+                    cursor: pointer;}
+    #hoverable-img img {width: 100%;
+                       height: auto;}
+    #hoverable-img:hover {transform: translate(-50%, -50%) scale(1.05);}
+    #hoverable-img .click-text {position: absolute;
+                               top: 50%;
+                               left: 50%;
+                               transform: translate(-50%, -50%);
+                               color: white;
+                               font-size: 24px;
+                               opacity: 0;
+                               transition: opacity 0.3s ease;
+                               pointer-events: none;
+                               padding: 4px 10px;
+                               background: rgba(0, 0, 0, 0.7);
+                               border-radius: 4px;
+                               backdrop-filter: blur(2px);}
+    #hoverable-img:hover .click-text {opacity: 1;}
+    .hidden {display: none;}
+    #clicked-img {position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  max-width: 30%;
+                  height: auto;
+                  z-index: 10;
+                  animation: dropAndShake 0.8s ease-out forwards;}
+    .scene_3_img_2 {background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmpkMmxkcTBrOW1nNXIxcnptcGY1cXhuNTcxZjQzOHd5Nmk3MGJ1MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCGZhRjavuqYg/giphy.gif);
+                  background-size: cover;
+                  background-attachment: fixed; 
+                  padding: 500px 0px;}
+    .scene_4{background-image: url(concrete_2.png);
+             background-attachment: fixed;
+             background-size: cover;
+             display: flex;
+             width: 100%;
+             box-sizing: border-box;
+             padding: 50px 0px}
+    .scene_4 h1 {font-size: 70px;
+                 color: #0041ff;
+                 line-height: 1}
+    .scene_4 span {color: white;}
+    .scene_4 p {font-size: 24px;
+                color: #00134b;
+                line-height: 1.3;
+                padding-bottom: 50px}
+    .scene4-wrapper {display: flex;
+                     width: 100%;
+                     box-sizing: border-box;}
+    .scene4-col {flex: 1;
+                 padding: 10px;}
+    .scene4-center {display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;}
+    .scene4-center img {width: 700px;
+                        height: auto;
+                        transition: transform 0.3s ease;}
+    .scene4-center img:hover {transform: scale(2);z-index: 10;}
+    .scene4-right {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    .scene4-right.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .scene4-left {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    .scene4-left.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .scene_5 {overflow-x: auto;
+              overflow-y: hidden;
+              white-space: nowrap;
+              height: 800px;
+              position: relative;}
+    .scene_5::after {content: "scroll >>";
+                     position: absolute;
+                     left: 20px;
+                     top: 50%;
+                     transform: translateY(-50%);
+                     color: white;
+                     font-size: 20px;
+                     animation: slideRight 1.5s ease-in-out infinite;
+                     pointer-events: none;
+                     opacity: 0.7;}
+    @keyframes slideRight {
+      0% { transform: translateY(-50%) translateX(0); }
+      50% { transform: translateY(-50%) translateX(20px); }
+      100% { transform: translateY(-50%) translateX(0); }
+    }
+    .subway {display: inline-block;
+             height: 100%;
+             width: auto;}
+    .subway_people {position: absolute; 
+                    top: 50%;            
+                    left: 50%;              
+                    transform: translate(-50%, -50%) scale(1); 
+                    width: 300px;           
+                    height: auto;
+                    z-index: 10;
+                    transform-origin: center center;
+                    animation: pulseOpacity 3s ease-in-out infinite;
+                    transition: transform 0.5s ease, opacity 0.5s ease;}
+    .subway_phone {position: absolute; 
+                   top: 50%;            
+                   left: 162.5%;              
+                   transform: translate(-50%, -50%) scale(1); 
+                   width: 300px;           
+                   height: auto;
+                   z-index: 10;
+                   transform-origin: center center;
+                   animation: pulseOpacity 3s ease-in-out infinite;
+                   transition: transform 0.5s ease, opacity 0.5s ease;}
+    .subway_tilt {position: absolute; 
+                  top: 50%;            
+                  left: 275%;              
+                  transform: translate(-50%, -50%) scale(1); 
+                  width: 300px;           
+                  height: auto;
+                  z-index: 10;
+                  transform-origin: center center;
+                  animation: pulseOpacity 3s ease-in-out infinite;
+                  transition: transform 0.5s ease, opacity 0.5s ease;}
+    .scene_5 .subway_people:hover,
+    .scene_5 .subway_phone:hover,
+    .scene_5 .subway_tilt:hover {transform: translate(-50%, -50%) scale(3);}
+    .scene_5_text {background: black;
+                   padding: 100px 20px}
+    .scene_5_text h1{color: white;
+                     font-size: 30px;}
+    .scene_5_text h2 {
+        color: #0041ff;
+        font-size: 90px;
+        padding: 16px 0px;
+        line-height: 1.2;
+        opacity: 0;
+        transform: translateX(-300px);
+        transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform, opacity;
+    }
+
+    .scene_5_text h2.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .scene_5_text h2:nth-child(2) {
+        transition-delay: 0.5s;
+    }
+
+    .scene_5_text h2:nth-child(3) {
+        transition-delay: 1s;
+    }
+
+    .scene_5_text h3{color: white;
+                     font-size: 30px}
+    .disarray {background-image: url(disarray.png);
+             background-attachment: fixed;
+             background-size: cover;
+             padding: 800px 0px;
+             position: relative;}
+    .hand {position: absolute; 
+           top: 66.8%;            
+           left: 50%;              
+           transform: translate(-50%, -50%); 
+           width: 1400px;           
+           height: auto;
+           z-index: 1;}
+    .footer {color: white;
+             font-size: 20px;
+             background: red;
+             padding: 20px 20px;}
+
+    .right {text-align: right;}
+    .left {text-align: left;}
+    .center {text-align: center;}
+    .padding-right {padding-right: 20px}
+    .padding-left {padding-left: 20px}
+    #timer {
+        transition: all 0.3s ease;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #timer.centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 144px !important;
+        color: red !important;
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.8) !important;
+        z-index: 1001;
+    }
+
+    .nav-menu {display: none;
+               position: fixed;
+               top: 30px;
+               right: 20px;
+               width: 200px;
+               background: rgba(0, 0, 0, 0.9);
+               padding: 10px 0;
+               z-index: 999;
+               text-align: left;}
+    .nav-menu a {display: block;
+                 color: white;
+                 text-decoration: none;
+                 padding: 10px 20px;
+                 transition: color 0.3s ease;
+                 text-align: left;}
+    .nav-menu a:hover {color: #0041ff;}
+
+    #scene-nav {cursor: pointer;
+                transition: all 0.3s ease;}
+    #scene-nav:hover {color: #0041ff;
+                      transform: scale(1.1);}
+
+@keyframes pulseOpacity {
+  0%, 100%   { opacity: 0.5; }
+  50%        { opacity: 1; }
+}
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes tick-tock {
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(6deg); }
+  20%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-50%) translateY(-5px); }
+  20%, 40%, 60%, 80%       { transform: translateX(-50%) translateY(5px); }
+}
+@keyframes fadeBoom {
+  0%   { opacity: 0.3; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+@keyframes dropAndShake {
+  0% {
+    transform: translate(-50%, -150%) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  80% {
+    transform: translate(-52%, -50%) scale(1);
+  }
+  90% {
+    transform: translate(-48%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="flex">
+            <div><span class="padding-left" id="timer">01:00</span></div>
+            <div>[ OMBWC ]</div>
+            <div class="padding-right" id="scene-nav">scene_#</div>
+        </div>
+    </nav>
+    <div class="nav-menu" id="nav-menu">
+        <a href=".scene_1">library</a>
+        <a href=".scene_2">seaside</a>
+        <a href=".scene_3">restaurant</a>
+        <a href=".scene_4">apartment</a>
+        <a href=".scene_5">subway</a>
+    </div>
+    <header class="intro">
+        <a href="https://youtu.be/n-_0BH-CFdA?si=S6zo82cKFNwnYXBf" target="_blank" rel="noopener noreferrer">
+            <img src="sound_track.svg" alt="sound_track" class="sound_track">
+        </a>
+        <img src="distopia.svg" alt="sound_track" class="distopia">
+        <img src="boom.svg" alt="sound_track" class="boom">
+        <h1 class="left">one minute<br> before the<br> world changed</h1>
+        <p class="wrap center">A minute before the <span class="span_color_1"><em>destruction</em> of the earth.</span><br>They didn't know. They didn't know that was the <span class="span_color_2">last moment of calm</span></p>
+        <hr>
+        <div class="street">
+            <img src="sunlight.png" alt="floating" class="floating-img-1">
+            <img src="urban.png" alt="floating" class="floating-img-2">
+            <img src="clock.png" alt="clock_hand" class="clock-hand">
+            <img src="https://i.pinimg.com/originals/ce/9a/0f/ce9a0f75f95709280fdf1599fbdbd6e4.gif" alt="peace_gif" class="peace_gif">
+            <div class="quote-pair">
+                <h2 class="center"><span class="span_color_2">"</span>You are now in the world, one minute before the end.<span class="span_color_2">"</span></h2>
+                <h3 class="wrap center">The sunlight spills through the windows, the coffee is warm, and people rush not to be late. Just another ordinary day, wrapped in familiar comfort.</h3>
+            </div>
+            <div class="quote-pair">
+                <h2 class="center"><span class="span_color_2">"</span>Everything was normal. No one knew.<span class="span_color_2">"</span></h2>
+                <h3 class="wrap center">The news was the same as yesterday, the sky was still blue, and people began their day with a yawn. Catastrophe always arrives without an announcement.</h3>
+            </div>
+            <div class="quote-pair">
+                <h2 class="center"><span class="span_color_2">"</span><span class="span_color_1"><em>Tick, tick, tick</em></span> — the second hand quietly moved closer.<span class="span_color_2">"</span></h2>
+                <h3 class="wrap center">A sound no one noticed, but always there. Steadily, faithfully, the clock moved toward the edge of the world.</h3>
+            </div>
+            <div class="quote-pair">
+                <h2 class="center"><span class="span_color_2">"</span>Collapse always begins in calm.<span class="span_color_2">"</span></h2>
+                <h3 class="wrap center">Cracks were forming, silently. <span class="span_color_1"><em>Even 60</em></span> seconds before the end, the world we loved smiled as if nothing was wrong. At this very moment, everything still seems peaceful.</h3>
+            </div>
+            <div class="wrap">
+                <h4 class="center">But this is the peace that comes just before the end.</h4>
+            </div>
+        </div>
+    </header>
+    <section class="scene_1">
+        <audio id="bookAudio" src="book.wav" style="display: none;"></audio>
+        <audio id="pencilAudio" src="pencil.mp3" style="display: none;"></audio>
+        <audio id="bookdropAudio" src="bookdrop.wav" style="display: none;"></audio>
+        <h1 class="center"><span class="span_color_1"><em>Library</em></span> - The Whisper of the Quiet Bookshelves</h1>
+        <div class="scene-img1">
+            <img src="desk.png" alt="desk.png">
+            <span class="click-text">click</span>
+        </div>
+        <div class="scene-img2">
+            <img src="study.png" alt="study.png">
+            <span class="click-text">click</span>
+        </div>
+        <div class="scene-img3">
+            <img src="book.png" alt="book.png">
+            <span class="click-text">click</span>
+        </div>
+        <h2 class="left">Bookshelves were perfectly arranged, and the air lay still.</h2>
+        <h3 class="left">Only the sunlight spilling through the window softly lit the room, as if time itself had paused. Ink smudges glittered on a single sheet wedged between the pages, and on the dust-laden desk lay a well-used pen, abandoned mid-thought.</h3>
+        <h2 class="left">Someone was preparing for an exam, and someone was dreaming.</h2>
+        <h3 class="left">On one side of the desk, a stack of textbooks bore densely penciled formulas and key points, while a small radio beside them murmured a quiet classical melody. On the cushions across the bed, travel snapshots and handwritten letters lay scattered. Some plotted their success, some yearned for freedom—each sketching tomorrow in the calm of an ordinary day.</h3>
+        <h2 class="left">In that order, which seemed too perfect ever to vanish, no one sensed the tide of unease.</h2>
+        <h3 class="left">The ticking of the wall clock seemed poised to break the silence, yet the sound never returned. The school bell down the hallway, the hum of engines on the street—every sound held its breath.</h3>
+        <h2 class="left">A single book trembled. Just once.</h2>    
+        <h3 class="left">The bookshelf door creaked closed, sending a few loose pages fluttering to the floor. Only then did ripples stir in the long-dormant space.</h3>
+    </section>
+    <section class="scene_2">
+        <audio id="seaAudio" src="sea.wav" style="display: none;"></audio>
+        <button onclick="toggleSeaAudio()" id="seaButton" style="position: absolute; top: 70px; left: 2px; z-index: 9999; background: rgba(0, 0, 0, 0.7); color: rgb(255, 255, 255); border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px; font-size: 16px;">▶ Sound</button>
+        <div id="a"><img id="hover-img" alt="hovered image"><span class="a-text">Seaside – A Child's Sandcastle</span></div>
+        <div class="hover-trigger" data-img="sea.png" style="grid-column: 2 / 3; grid-row: 1 / 2; font-size: 20px"><em>That day, the sea was peaceful.</em></div>
+        <div style="grid-column: 3 / 4; grid-row: 1 / 2; font-size: 20px">Sunlight shimmered over the waves, and the tide breathed in quiet rhythm. The salty air was warm, and a gentle mist blurred the horizon. The world looked as if nothing could ever go wrong.</div>
+        <div class="hover-trigger" data-img="castle.png" style="grid-column: 2 / 3; grid-row: 2 / 3; font-size: 20px"><em>The child built a castle on the shore,<br> and the sand didn't seem like it could ever break.</em></div>
+        <div style="grid-column: 3 / 4; grid-row: 2 / 3; font-size: 20px">With tiny, diligent hands, the child shaped towers and walls, wet sand packed firm beneath fingertips. The waves crept close now and then, but the child didn't mind. To them, the castle was a promise — a whole world held in place by imagination and play.</div>
+        <div class="hover-trigger" data-img="sky.png" style="grid-column: 2 / 3; grid-row: 3 / 4; font-size: 20px"><em>The sky was blue, and the wind<br> was full of mischief.</em></div>
+        <div style="grid-column: 3 / 4; grid-row: 3 / 4; font-size: 20px">Clouds drifted like cotton, and the breeze tousled the child's hair. Seagulls cried above, and the waves hummed like a lullaby. It was a moment untouched by noise, fear, or shadow — perfectly whole.</div>
+        <div class="hover-trigger" data-img="wave.png" style="grid-column: 2 / 3; grid-row: 4 / 5; font-size: 20px"><em>But beyond the horizon,<br> a massive wave was rising.</em></div>
+        <div style="grid-column: 3 / 4; grid-row: 4 / 5; font-size: 20px">No one saw it coming. Far away, the wind had shifted, and something deep within the sea had begun to stir. The wave grew, silently, steadily, moving ever closer beneath the illusion of calm.</div>
+        <div class="hover-trigger" data-img="ending.png" style="grid-column: 2 / 3; grid-row: 5 / 6; font-size: 20px"><em>The sandcastle said nothing,<br> even at the end.</em></div>
+        <div style="grid-column: 3 / 4; grid-row: 5 / 6; font-size: 20px">It held its place, even as it knew it would fall. No cries, no resistance — only quiet collapse beneath the breath of the sea.</div>
+    </section>
+    <section class="scene_3">
+        <audio id="restaurantAudio" src="restaurant.wav" style="display: none;"></audio>
+        <button onclick="toggleRestaurantAudio()" id="restaurantButton" style="position: absolute; top: 20px; left: 20px; z-index: 9999; background: rgba(0, 0, 0, 0.8); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px; font-size: 16px;">▶ Sound</button>
+        <h1>RESTAURANT -<br> FAMILY<br> PHOTO</h1>
+        <p class="center">THE DINNER TABLE WAS FILLED WITH THE SOUND OF SIZZLING MEAT AND LAUGHTER. DAD CRACKED A JOKE, AND THE CHILD SPILLED THEIR COLA, LAUGHING. MOM SET THE TIMER, AND THE FAMILY NATURALLY TURNED THEIR FACES TOWARD THE CAMERA. CLICK—A FLEETING MOMENT OF JOY WAS CAPTURED IN A PHOTO. IT WAS JUST AN ORDINARY DAY. A FAMILIAR EVENING, FAMILIAR SMILES. BUT RIGHT AFTER, THE LIGHTS IN THE HOUSE BEGAN TO FLICKER. THE SLIGHT TREMOR SPREAD LIKE A WARNING, AND THE LAUGHTER FADED. THAT PHOTO BECAME THE LAST IMAGE THEY EVER TOOK TOGETHER. ONLY THAT PEACEFUL MOMENT REMAINED—A MEMORY JUST BEFORE THE WORLD BEGAN TO SHAKE. AND THEIR SMILES STAYED FROZEN IN TIME. NO ONE KNEW THAT MOMENT WOULD BE THEIR LAST.</p>
+    </section>
+    <section class="scene_3_img">
+        <audio id="glassAudio" src="glass.wav" style="display: none;"></audio>
+        <div id="hoverable-img">
+            <img src="cheers.png" alt="Main Image">
+            <span class="click-text">click</span>
+        </div>
+        <img id="clicked-img" src="cup.png" alt="Clicked Image" class="hidden">
+    </section>
+    <section class="scene_3_img_2">
+
+    </section>
+    <section class="scene_4">
+        <div class="scene4-wrapper">
+            <div class="scene4-col scene4-left">
+                <h1><span><em>APARTMENT</em></span> CALM OUTSIDE THE WINDOW</h1>
+            </div>
+            <div class="scene4-col scene4-center">
+                <img src="1.jpg">
+                <img src="2.jpg">
+                <img src="3.jpg">
+                <img src="4.jpg">
+                <img src="5.jpg">
+                <img src="6.jpg">
+                <img src="2.jpg">
+                <img src="4.jpg">
+                <img src="1.jpg">
+                <img src="6.jpg">
+                <img src="5.jpg">
+                <img src="3.jpg">
+            </div>
+            <div class="scene4-col scene4-right">
+                <p><span>IT WAS AN ORDINARY EVENING.</span> THE SKY OUTSIDE THE WINDOW WAS CLEAR AND DISTANT, SPOTLESS IN ITS SERENITY—YET NO ONE NOTICED. ON THE MUTED TELEVISION, THE NEWS PLAYED SILENTLY. THE CHILD SAT HUNCHED OVER, COMPLETELY IMMERSED IN THEIR GAME. IN THE KITCHEN, THE SCENT OF FRIED RICE LINGERED IN THE AIR, AND THE SOUND OF DISHWATER FORMED A STEADY RHYTHM. EVERYTHING FELT NORMAL, AND THAT SENSE OF NORMALCY WAS UNSHAKABLE.</p>
+                <hr>
+                <p>
+                EVERYONE'S GAZE REMAINED LOW, ANCHORED IN THEIR ROUTINES. NOT A SINGLE PERSON THOUGHT TO LIFT THEIR HEAD AND LOOK UP AT THE SKY. <span>THE SKY, HOWEVER, QUIETLY BORE A SIGN—AN OMEN—UNFOLDING BEYOND THEIR AWARENESS.</span> AND WITHOUT WARNING, IT DREW A LINE THROUGH THE QUIET EVENING.  
+                </p>
+                <hr>
+                <p>
+                A SINGLE BEAM OF LIGHT TORE THROUGH THE SKY AND CAME CRASHING DOWN. ONLY THEN DID WE UNDERSTAND: THE SKY, WHICH WE HAD FAILED TO LOOK AT, HAD CHANGED FIRST.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="scene_5">
+        <audio id="subwayAudio" src="subway.mp3" style="display: none;"></audio>
+        <button onclick="toggleSubwayAudio()" id="subwayButton" style="position: absolute; top: 20px; left: 20px; z-index: 1000; background: rgba(255, 255, 255, 0.7); color: black; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">▶ Sound</button>
+        <img src="subway.png" alt="가로로 긴 이미지" class="subway">
+        <img src="people.png" class="subway_people">
+        <img src="phone.png" class="subway_phone">
+        <img src="tilt.png" class="subway_tilt">
+    </section>
+    <section class="scene_5_text">
+        <h1 class="center">SUBWAY - A REPEAT OF DAILY LIFE</h1>
+        <h2 class="center">EYES FIXED ON SCREENS. DISASTERS MUTED, GOODBYES LOOPED, NO ONE LOOKED UP. A PHONE BUZZED — '1' BLINKED. LIGHT BROKE THROUGH THE WINDOW. THE SUBWAY KEPT MOVING.</h2>
+        <h3 class="center">"FINAL STATION APPROACHING."</h3>
+    </section>
+    <section class="disarray">
+        <img src="hand.png" class="hand">
+    </section>
+    <footer class="footer">
+    © 2025 Jo-JinWoo – "One minute before the world changed."<span style="opacity: 0.6;"><br>What would you do, if you knew you had only one minute?<br>Created with time, silence, and a fading sky.</span>
+    </footer>
+    <div id="text-modal"></div>
+    <div id="boom-gif-overlay" class="gif-overlay">
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGVicHNjNHlzZG1yejA5YXhicXQyNGI4ZHh3bXZtNTdvZm56a2plcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rSxGPn046lZGE/giphy.gif" alt="Boom GIF">
+    </div>
+    <div class="bottom-nav">
+        © 2025, Jo-JinWoo
+    </div>
+    <script>
+    const timerEl = document.getElementById('timer');
+    let isScrolling;
+    const sceneNav = document.getElementById('scene-nav');
+    const navMenu = document.getElementById('nav-menu');
+    const bottomNav = document.querySelector('.bottom-nav');
+    const bookAudio = document.getElementById('bookAudio');
+    const pencilAudio = document.getElementById('pencilAudio');
+    const glassAudio = document.getElementById('glassAudio');
+    const bookdropAudio = document.getElementById('bookdropAudio');
+    const subwayAudio = document.getElementById('subwayAudio');
+    const subwayButton = document.getElementById('subwayButton');
+    let isPlaying = false;
+    let isPencilPlaying = false;
+    let isGlassPlaying = false;
+    let isBookdropPlaying = false;
+    let isSubwayPlaying = false;
+
+    document.querySelector('.scene-img1').addEventListener('click', () => {
+        if (isPlaying) {
+            bookAudio.pause();
+            isPlaying = false;
+        } else {
+            bookAudio.play();
+            isPlaying = true;
+        }
+    });
+
+    document.querySelector('.scene-img2').addEventListener('click', () => {
+        if (isPencilPlaying) {
+            pencilAudio.pause();
+            isPencilPlaying = false;
+        } else {
+            pencilAudio.play();
+            isPencilPlaying = true;
+        }
+    });
+
+    document.querySelector('.scene-img3').addEventListener('click', () => {
+        if (isBookdropPlaying) {
+            bookdropAudio.pause();
+            isBookdropPlaying = false;
+        } else {
+            bookdropAudio.play();
+            isBookdropPlaying = true;
+        }
+    });
+
+    document.querySelector('#hoverable-img').addEventListener('click', () => {
+        if (isGlassPlaying) {
+            glassAudio.pause();
+            isGlassPlaying = false;
+        } else {
+            glassAudio.play();
+            isGlassPlaying = true;
+        }
+    });
+
+    bottomNav.addEventListener('click', () => {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+    });
+
+    sceneNav.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetClass = link.getAttribute('href');
+            const targetElement = document.querySelector(targetClass);
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            navMenu.style.display = 'none';
+        });
+    });
+
+    function updateTimerByScroll() {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = Math.min(scrollTop / maxScroll, 1);
+
+      const totalSeconds = 60;
+      const remainingSeconds = Math.round(totalSeconds * (1 - progress));
+
+      const minutes = Math.floor(remainingSeconds / 60);
+      const seconds = remainingSeconds % 60;
+      timerEl.textContent =
+        String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+
+      // Check if we're in the disarray section
+      const disarraySection = document.querySelector('.disarray');
+      const disarrayTop = disarraySection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (disarrayTop < windowHeight * 0.5) {
+        timerEl.classList.add('centered');
+      } else {
+        timerEl.classList.remove('centered');
+      }
+    }
+
+    window.addEventListener('load', updateTimerByScroll);
+    window.addEventListener('scroll', () => {
+      updateTimerByScroll();
+      
+      // Only apply the red color effect if timer is not centered
+      if (!timerEl.classList.contains('centered')) {
+        timerEl.style.fontSize = '24px';
+        timerEl.style.color = 'red';
+        timerEl.style.textShadow = '0 0 10px rgba(0, 0, 0, 0.8)';
+        
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+          timerEl.style.fontSize = '16px';
+          timerEl.style.color = 'white';
+          timerEl.style.textShadow = 'none';
+        }, 150);
+      }
+    });
+
+    document.querySelector('.flex div:nth-child(2)').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+  const boomEl = document.querySelector('.boom');
+  const overlay = document.getElementById('boom-gif-overlay');
+
+  boomEl.addEventListener('click', () => {
+    overlay.style.display = 'block';
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+
+const img1 = document.querySelector('.scene-img1');
+const img2 = document.querySelector('.scene-img2');
+const img3 = document.querySelector('.scene-img3');
+const modal = document.getElementById('text-modal');
+
+const h2List = document.querySelectorAll('.scene_1 h2.left');
+const h3List = document.querySelectorAll('.scene_1 h3.left');
+
+function showModal(htmlContent) {
+  modal.innerHTML = htmlContent;
+  modal.style.display = 'block';
+}
+
+img1.addEventListener('click', () => {
+  showModal(
+    `<h2>${h2List[0].textContent}</h2>
+     <h3>${h3List[0].textContent}</h3>`
+  );
+});
+
+img2.addEventListener('click', () => {
+  showModal(
+    `<h2>${h2List[1].textContent}</h2>
+     <h3>${h3List[1].textContent}</h3>`
+  );
+});
+
+img3.addEventListener('click', () => {
+  showModal(
+    `<h2>${h2List[2].textContent}</h2>
+     <h3>${h3List[2].textContent}</h3>
+     <h2>${h2List[3].textContent}</h2>
+     <h3>${h3List[3].textContent}</h3>`
+  );
+});
+
+modal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+const triggers = document.querySelectorAll('.scene_2 .hover-trigger');
+const hoverImg = document.getElementById('hover-img');
+
+triggers.forEach(trigger => {
+  trigger.addEventListener('mouseenter', () => {
+    
+    const src = trigger.getAttribute('data-img');
+    hoverImg.src = src;
+    hoverImg.style.display = 'block';
+  });
+  trigger.addEventListener('mouseleave', () => {
+    hoverImg.style.display = 'none';
+    hoverImg.src = '';
+  });
+});
+
+const hoverableImg = document.getElementById('hoverable-img');
+const clickedImg   = document.getElementById('clicked-img');
+
+hoverableImg.addEventListener('click', () => {
+  
+  hoverableImg.classList.add('hidden');
+  clickedImg.classList.remove('hidden');
+});
+
+
+clickedImg.addEventListener('click', () => {
+  clickedImg.classList.add('hidden');
+  hoverableImg.classList.remove('hidden');
+});
+
+function toggleSubwayAudio() {
+    if (isSubwayPlaying) {
+        subwayAudio.pause();
+        isSubwayPlaying = false;
+        subwayButton.textContent = '▶ Sound';
+    } else {
+        subwayAudio.play();
+        isSubwayPlaying = true;
+        subwayButton.textContent = '⏸ Sound';
+    }
+}
+
+const restaurantAudio = document.getElementById('restaurantAudio');
+const restaurantButton = document.getElementById('restaurantButton');
+let isRestaurantPlaying = false;
+
+function toggleRestaurantAudio() {
+    if (isRestaurantPlaying) {
+        restaurantAudio.pause();
+        isRestaurantPlaying = false;
+        restaurantButton.textContent = '▶ Sound';
+    } else {
+        restaurantAudio.play();
+        isRestaurantPlaying = true;
+        restaurantButton.textContent = '⏸ Sound';
+    }
+}
+
+const seaAudio = document.getElementById('seaAudio');
+const seaButton = document.getElementById('seaButton');
+let isSeaPlaying = false;
+
+function toggleSeaAudio() {
+    if (isSeaPlaying) {
+        seaAudio.pause();
+        isSeaPlaying = false;
+        seaButton.textContent = '▶ Sound';
+    } else {
+        seaAudio.play();
+        isSeaPlaying = true;
+        seaButton.textContent = '⏸ Sound';
+    }
+}
+
+// Add scroll animation for scene4 and scene5
+const scene4Right = document.querySelector('.scene4-right');
+const scene4Left = document.querySelector('.scene4-left');
+const scene5Text = document.querySelector('.scene_5_text');
+const scene5H2s = document.querySelectorAll('.scene_5_text h2');
+let isAnimating = false;
+
+function checkScroll() {
+    const scene4 = document.querySelector('.scene_4');
+    const scene4Top = scene4.getBoundingClientRect().top;
+    const scene4Bottom = scene4.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+    
+    // When entering the section (from top or bottom)
+    if (scene4Top < windowHeight * 0.8 && scene4Bottom > 0) {
+        scene4Right.classList.add('animate');
+        scene4Left.classList.add('animate');
+    } else {
+        // When leaving the section
+        scene4Right.classList.remove('animate');
+        scene4Left.classList.remove('animate');
+    }
+
+    // Check for scene5_text animation
+    const scene5Top = scene5Text.getBoundingClientRect().top;
+    const scene5Bottom = scene5Text.getBoundingClientRect().bottom;
+    
+    if (scene5Top < windowHeight * 0.8 && scene5Bottom > 0 && !isAnimating) {
+        isAnimating = true;
+        scene5H2s.forEach(h2 => {
+            h2.classList.remove('animate');
+            // Force a reflow
+            void h2.offsetWidth;
+            h2.classList.add('animate');
+        });
+    } else if ((scene5Top >= windowHeight * 0.8 || scene5Bottom <= 0) && isAnimating) {
+        isAnimating = false;
+        scene5H2s.forEach(h2 => h2.classList.remove('animate'));
+    }
+}
+
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            checkScroll();
+            scrollTimeout = null;
+        }, 10);
+    }
+});
+window.addEventListener('load', checkScroll);
+  </script>
+</body>
+</html>
